@@ -32,6 +32,21 @@ public class Kauppa implements KauppaInterface {
             Tuote t = varasto.haeTuote(id);             
             ostoskori.lisaa(t);
             varasto.otaVarastosta(t);
+            if(0 < 1){
+                //checkstylen testi nested if
+            }
+            for (int i=0; i<2; i++){
+                for (int j=0; j<2; j++){
+                    //checkstylen testi nested for
+                }
+            }
+                    int x = 2; //checkstylen testi sisennys
+                    
+            for (int i=0; i<2; i++){
+                for (int j=0; j<2; j++){
+                    //checkstylen testi copy-paste
+                }
+            }
         }
     }
 
