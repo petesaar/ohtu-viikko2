@@ -5,6 +5,7 @@ import ohtu.data_access.UserDao;
 import ohtu.io.ConsoleIO;
 import ohtu.io.IO;
 import ohtu.services.AuthenticationService;
+import ohtu.domain.User;
 
 public class App {
 
@@ -56,6 +57,13 @@ public class App {
         IO io = new ConsoleIO();
         AuthenticationService auth = new AuthenticationService(dao);
         new App(io, auth).run();
+        
+        /**
+        User testi = new User("x", "x");
+        System.out.println("testityyppi: "+testi.getUsername());
+        testi =        dao.findByName("pekka");
+        System.out.println("testityyppi: "+testi.getUsername());
+        * */
     }
     
     // testejä debugatessa saattaa olla hyödyllistä testata ohjelman ajamista

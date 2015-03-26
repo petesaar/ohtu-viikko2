@@ -40,7 +40,26 @@ public class AuthenticationService {
 
     private boolean invalid(String username, String password) {
         // validity check of username and password
+        
+        boolean epakelpoNimi = false;
+        boolean epakelpoSalasana = false;
+        boolean eiErikoismerkkeja = true;
 
-        return false;
+        if (username.length() < 3){
+            epakelpoNimi = true;
+        }
+        
+        if (password.length() < 8){
+            epakelpoSalasana = true;
+        }
+        
+        String aakkoset = "abcdefghijklmnopqrstuvwxyz";
+        for (char merkki : password.toCharArray()){
+            if (aakkoset.indexOf(merkki) == -1){
+                eiErikoismerkkeja = false;
+            }
+        }
+        
+        return eiErikoismerkkeja || epakelpoNimi || epakelpoSalasana;
     }
 }
