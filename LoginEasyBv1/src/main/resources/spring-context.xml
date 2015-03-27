@@ -12,4 +12,11 @@
     <context:annotation-config />
     <context:component-scan base-package="ohtu" />  
     
+    <bean id="fileUserDao" class="ohtu.data_access.FileUserDao">
+        <constructor-arg type="java.lang.String" value="kayttajat.txt"/>
+    </bean>
+    <bean id="inMemoryUserDao" class="ohtu.data_access.InMemoryUserDao"></bean>
+    <bean id="authenticationService" class="ohtu.services.AuthenticationService">
+        <constructor-arg ref="fileUserDao"/>
+    </bean>
 </beans>
